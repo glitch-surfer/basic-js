@@ -16,24 +16,25 @@ const { NotImplementedError } = require('../extensions/index.js');
  *
  */
 function repeater(str, options) {
-  /* if (typeof str !== 'string') {
-    str = '' + str
+  if (!options.repeatTimes) {
+    options.repeatTimes = 1
   }
-  if (typeof options.addition !== 'string') {
-    options.addition = '' + options.addition
-  } */
-    if (!options.repeatTimes) {
-      options.repeatTimes = 1
-    }
-    if (!options.additionRepeatTimes) {
-      options.additionRepeatTimes = 1
-    }
-    if (!options.separator) {
-      options.separator = '+'
-    }
-    if (!options.additionSeparator) {
-      options.additionSeparator = '|'
-    }
+  if (!options.additionRepeatTimes) {
+    options.additionRepeatTimes = 1
+  }
+  if (!options.separator) {
+    options.separator = '+'
+  }
+  if (!options.additionSeparator) {
+    options.additionSeparator = '|'
+  }
+
+  if (typeof str !== 'string') {
+    str = String(str)
+  }
+  if (options.addition === null) {
+    options.addition = String(options.addition)
+  }
 
   let mainArr = []
 
