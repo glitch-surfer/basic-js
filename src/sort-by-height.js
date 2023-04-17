@@ -13,7 +13,7 @@ const { NotImplementedError } = require('../extensions/index.js');
  */
 function sortByHeight(arr) {
  return arr.map(item => {
-  item === -1 ? -1 : item.sort()
+  item === -1 ? -1 : arr.sort()
     })
  
  /* return arr.map(iter => iter === -1 ? -1 : sort.pop()) */
