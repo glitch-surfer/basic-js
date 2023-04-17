@@ -22,33 +22,33 @@ function repeater(str, options) {
   if (typeof options.addition !== 'string') {
     options.addition = '' + options.addition
   } */
-  if (!options.repeatTimes) {
-    options.repeatTimes = 1
-  }
-  if (!options.additionRepeatTimes) {
-    options.additionRepeatTimes = 1
-  }
-  if (!options.separator) {
-    options.separator = '+'
-  }
-  if (!options.additionSeparator) {
-    options.additionSeparator = '|'
-  }
+    if (!options.repeatTimes) {
+      options.repeatTimes = 1
+    }
+    if (!options.additionRepeatTimes) {
+      options.additionRepeatTimes = 1
+    }
+    if (!options.separator) {
+      options.separator = '+'
+    }
+    if (!options.additionSeparator) {
+      options.additionSeparator = '|'
+    }
 
   let mainArr = []
-  
+
 
   for (let i = 0; i < options.repeatTimes; ++i) {
     let additionArr = []
     let result = ''
     result += str
-    
+
     for (let j = 0; j < options.additionRepeatTimes; ++j) {
-      
+
       additionArr.push(options.addition)
-    
+
     }
-    
+
     let additionResult = additionArr.join(options.additionSeparator)
     result += additionResult
     mainArr.push(result)
